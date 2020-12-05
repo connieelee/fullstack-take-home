@@ -1,0 +1,35 @@
+/* Reference: https://codepen.io/matt-daniel-brown/pen/bPBxEJ */
+
+.Button {
+  font-size: inherit;
+  border: 0;
+  background: #6800e6;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.Button:hover, .Button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #6800e633;
+}
+
+.Button:active {
+  transform: scale(0.9);
+  background: #6300d9;
+  box-shadow: 0 0 0 4px #6300d933;
+}
+
+.Button.btn-normal {
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+}
+
+.Button.btn-icon {
+  height: 2.5rem;
+  width: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2rem;
+}

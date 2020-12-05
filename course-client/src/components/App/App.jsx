@@ -1,23 +1,29 @@
 import React from 'react';
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
+import { Courses, Course } from '../../pages';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Course Sign Up</h1>
-      <h2>Courses</h2>
-      <h2>Sign Up</h2>
-
-      <input type="text" placeholder="Name" />
-      <input type="text" placeholder="Email" />
-      <button
-        type="submit"
-        onClick={() => alert('Sign up clicked!')}
-      >
-        Sign Up
-      </button>
-    </div>
-  );
-}
+const App = () => (
+  <div className="App">
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          <Redirect to="/courses" />
+        </Route>
+        <Route exact path="/courses">
+          <Courses />
+        </Route>
+        <Route exact path="/courses/:courseId">
+          <Course />
+        </Route>
+      </Switch>
+    </BrowserRouter>
+  </div>
+);
 
 export default App;

@@ -1,12 +1,15 @@
 const express = require('express');
+const accessControl = require('./middleware/access-control');
+const errorHandler = require('./middleware/error-handler');
+const coursesRouter = require('./routers/courses');
 const db = require('./db');
 
 const app = express();
 const port = 8080;
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+app.use(accessControl);
+app.use('/courses', coursesRouter);
+app.use(errorHandler);
 
 app.listen(port, async () => {
   console.log(`Course Signup Server listening at http://localhost:${port}`);
