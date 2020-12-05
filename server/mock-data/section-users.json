@@ -1,0 +1,142 @@
+[
+  {
+    "sectionId": 1,
+    "userId": 1
+  },
+  {
+    "sectionId": 1,
+    "userId": 3
+  },
+  {
+    "sectionId": 1,
+    "userId": 5
+  },
+  {
+    "sectionId": 1,
+    "userId": 7
+  },
+  {
+    "sectionId": 1,
+    "userId": 9
+  },
+  {
+    "sectionId": 1,
+    "userId": 11
+  },
+  {
+    "sectionId": 2,
+    "userId": 2
+  },
+  {
+    "sectionId": 2,
+    "userId": 4
+  },
+  {
+    "sectionId": 2,
+    "userId": 6
+  },
+  {
+    "sectionId": 2,
+    "userId": 8
+  },
+  {
+    "sectionId": 2,
+    "userId": 10
+  },
+  {
+    "sectionId": 2,
+    "userId": 12
+  },
+  {
+    "sectionId": 2,
+    "userId": 14
+  },
+  {
+    "sectionId": 2,
+    "userId": 16
+  },
+  {
+    "sectionId": 2,
+    "userId": 18
+  },
+  {
+    "sectionId": 3,
+    "userId": 1
+  },
+  {
+    "sectionId": 3,
+    "userId": 4
+  },
+  {
+    "sectionId": 3,
+    "userId": 7
+  },
+  {
+    "sectionId": 3,
+    "userId": 10
+  },
+  {
+    "sectionId": 3,
+    "userId": 12
+  },
+  {
+    "sectionId": 3,
+    "userId": 15
+  },
+  {
+    "sectionId": 3,
+    "userId": 18
+  },
+  {
+    "sectionId": 3,
+    "userId": 21
+  },
+  {
+    "sectionId": 4,
+    "userId": 25
+  },
+  {
+    "sectionId": 4,
+    "userId": 24
+  },
+  {
+    "sectionId": 4,
+    "userId": 23
+  },
+  {
+    "sectionId": 4,
+    "userId": 22
+  },
+  {
+    "sectionId": 5,
+    "userId": 21
+  },
+  {
+    "sectionId": 5,
+    "userId": 20
+  },
+  {
+    "sectionId": 5,
+    "userId": 19
+  },
+  {
+    "sectionId": 5,
+    "userId": 18
+  },
+  {
+    "sectionId": 5,
+    "userId": 17
+  },
+  {
+    "sectionId": 6,
+    "userId": 16
+  },
+  {
+    "sectionId": 6,
+    "userId": 15
+  },
+  {
+    "sectionId": 6,
+    "userId": 14
+  }
+]
