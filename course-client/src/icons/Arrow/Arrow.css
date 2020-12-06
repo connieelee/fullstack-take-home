@@ -1,0 +1,11 @@
+.Arrow.arrow-up {
+  transform: rotate(270deg);
+}
+
+.Arrow.arrow-down {
+  transform: rotate(90deg);
+}
+
+.Arrow.arrow-left {
+  transform: rotate(180deg);
+}

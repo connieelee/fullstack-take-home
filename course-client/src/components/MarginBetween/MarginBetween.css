@@ -1,0 +1,28 @@
+.MarginBetween.margin-vertical.margin-s > * {
+  margin: 1em 0;
+}
+.MarginBetween.margin-vertical.margin-m > * {
+  margin: 3em 0;
+}
+.MarginBetween.margin-vertical > *:first-child {
+  margin-top: 0;
+}
+.MarginBetween.margin-vertical > *:last-child {
+  margin-bottom: 0;
+}
+
+.MarginBetween.margin-horizontal {
+  display: flex;
+}
+.MarginBetween.margin-horizontal.margin-s > * {
+  margin: 0 1em;
+}
+.MarginBetween.margin-horizontal.margin-m > * {
+  margin: 0 3em;
+}
+.MarginBetween.margin-horizontal > *:first-child {
+  margin-left: 0;
+}
+.MarginBetween.margin-horizontal > *:last-child {
+  margin-right: 0;
+}

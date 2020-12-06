@@ -28,7 +28,7 @@
 .Button.btn-icon {
   height: 2.5rem;
   width: 2.5rem;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 2rem;

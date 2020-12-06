@@ -1,0 +1,21 @@
+.Badge {
+  display: inline;
+  margin: 0 0.8em;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  padding: 0.25em 0.7em;
+  border-radius: 1em;
+}
+
+.Badge.badge-green {
+  background: #28cc2f;
+}
+
+.Badge.badge-blue {
+  background: #1771ff;
+}
+
+.Badge.badge-grey {
+  background: #9e9e9e;
+}
