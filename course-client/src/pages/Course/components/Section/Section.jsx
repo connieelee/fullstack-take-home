@@ -5,67 +5,60 @@ import { useParams } from 'react-router-dom';
 import SectionStatus from '../SectionStatus/SectionStatus';
 import BackButton from '../../../../components/BackButton/BackButton';
 import getSectionDates from '../../utils/get-section-dates';
-import sectionPropType from '../../utils/section-prop-type';
+import propShapes from '../../utils/prop-shapes';
 
 import './Section.css';
+import MarginBetween from '../../../../components/MarginBetween/MarginBetween';
 
 const Section = ({ loading, section, error }) => {
   const { courseId } = useParams();
-  let header;
-  let content;
-
-  if (loading) {
-    header = 'Loading...';
-  } else if (error) {
-    header = 'Error';
-    content = <p>{error.message}</p>;
-  } else if (section) {
-    const {
-      name,
-      status,
-      displayDates,
-      users,
-    } = section;
-
-    header = (
-      <>
-        {name}
-        <SectionStatus status={status} />
-      </>
-    );
-    content = (
-      <div>
-        <p>{getSectionDates(displayDates)}</p>
-        <div className="participants">
-          <h3>Participants</h3>
-          <ol>
-            {users.map((user) => (
-              <li key={user.id}>
-                {`${user.name}, ${user.email}`}
-              </li>
-            ))}
-          </ol>
-        </div>
-      </div>
-    );
-  }
 
   return (
-    <div className="Section">
-      <h2 className="section-header">{header}</h2>
-      {content}
+    <MarginBetween size="m" className="Section">
+      {loading && <h3>Loading...</h3>}
+
+      {error && (
+        <>
+          <h3>Error</h3>
+          <p>{error.message}</p>
+        </>
+      )}
+
+      {section && (
+        <>
+          <div>
+            <h2 className="section-header">
+              {section.name}
+              <SectionStatus status={section.status} />
+            </h2>
+            <p className="italic">{getSectionDates(section.displayDates)}</p>
+          </div>
+
+          <div>
+            <h3>Participants</h3>
+            <ol className="users-list">
+              {section.users.map((user) => (
+                <li key={user.id}>
+                  {`${user.name}, ${user.email}`}
+                </li>
+              ))}
+            </ol>
+          </div>
+        </>
+      )}
+
       <BackButton
         to={`/courses/${courseId}`}
         text="All sections"
         hollow
       />
-    </div>
+    </MarginBetween>
   );
 };
 
 Section.propTypes = {
   loading: PropTypes.bool,
-  section: sectionPropType,
+  section: PropTypes.shape(propShapes.section),
   error: PropTypes.shape({
     message: PropTypes.string,
   }),

@@ -2,7 +2,7 @@
   margin: 1em 0;
 }
 .MarginBetween.margin-vertical.margin-m > * {
-  margin: 3em 0;
+  margin: 2.5em 0;
 }
 .MarginBetween.margin-vertical > *:first-child {
   margin-top: 0;
@@ -18,7 +18,7 @@
   margin: 0 1em;
 }
 .MarginBetween.margin-horizontal.margin-m > * {
-  margin: 0 3em;
+  margin: 0 2.5em;
 }
 .MarginBetween.margin-horizontal > *:first-child {
   margin-left: 0;

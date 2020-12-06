@@ -25,5 +25,6 @@ module.exports = {
         '**/*.spec.js',
       ],
     }],
+    'react/jsx-props-no-spreading': ['off'],
   },
 };

@@ -5,7 +5,7 @@ import MarginBetween from '../../../../components/MarginBetween/MarginBetween';
 import Card from '../../../../components/Card/Card';
 import SectionStatus from '../SectionStatus/SectionStatus';
 import getSectionDates from '../../utils/get-section-dates';
-import sectionPropType from '../../utils/section-prop-type';
+import propShapes from '../../utils/prop-shapes';
 
 const Sections = ({ sections }) => (
   <div>
@@ -23,7 +23,7 @@ const Sections = ({ sections }) => (
               {name}
               <SectionStatus status={status} />
             </h3>
-            <p>{getSectionDates(displayDates)}</p>
+            <p className="italic">{getSectionDates(displayDates)}</p>
           </div>
         </Card>
       ))}
@@ -32,7 +32,7 @@ const Sections = ({ sections }) => (
 );
 
 Sections.propTypes = {
-  sections: PropTypes.arrayOf(sectionPropType),
+  sections: PropTypes.arrayOf(PropTypes.shape(propShapes.section)),
 };
 
 Sections.defaultProps = {
