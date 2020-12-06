@@ -17,6 +17,9 @@ const Session = db.define('session', {
   description: {
     type: DataTypes.TEXT,
   },
+  content: {
+    type: DataTypes.TEXT,
+  },
 });
 
 module.exports = Session;

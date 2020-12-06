@@ -11,6 +11,12 @@ const User = db.define('user', {
     allowNull: false,
     unique: true,
   },
+}, {
+  defaultScope: {
+    attributes: {
+      exclude: ['createdAt', 'updatedAt'],
+    },
+  },
 });
 
 module.exports = User;

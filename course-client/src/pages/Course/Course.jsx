@@ -45,7 +45,7 @@ const Course = () => {
             direction="horizontal"
             size="m"
           >
-            <Sessions sessions={course.sessions} />
+            <Sessions sessions={selectedSection ? selectedSection.sessions : course.sessions} />
             {
               !sectionId
                 ? <Sections sections={course.sections} />

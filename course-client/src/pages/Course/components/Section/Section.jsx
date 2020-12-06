@@ -57,7 +57,7 @@ const Section = ({ loading, section, error }) => {
       <BackButton
         to={`/courses/${courseId}`}
         text="All sections"
-        inverted
+        hollow
       />
     </div>
   );

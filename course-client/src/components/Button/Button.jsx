@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Button.css';
 
-const Button = ({ variant, inverted, children }) => (
+const Button = ({ variant, hollow, children }) => (
   <button
-    className={`Button btn-${variant} ${inverted ? 'btn-inverted' : ''}`}
+    className={`Button btn-${variant} ${hollow ? 'btn-hollow' : ''}`}
     type="button"
   >
     {
       variant === 'icon'
-        ? React.cloneElement(children, { color: inverted ? '#3542ff' : '#ffffff' })
+        ? React.cloneElement(children, { color: hollow ? '#3542ff' : '#ffffff' })
         : children
     }
   </button>
@@ -17,13 +17,13 @@ const Button = ({ variant, inverted, children }) => (
 
 Button.propTypes = {
   variant: PropTypes.oneOf(['normal', 'icon']),
-  inverted: PropTypes.bool,
+  hollow: PropTypes.bool,
   children: PropTypes.node,
 };
 
 Button.defaultProps = {
   variant: 'normal',
-  inverted: false,
+  hollow: false,
   children: null,
 };
 

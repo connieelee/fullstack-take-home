@@ -17,7 +17,7 @@ const Sections = ({ sections }) => (
         displayDates,
         status,
       }) => (
-        <Card key={id} to={`?sectionId=${id}`} invertButton>
+        <Card key={id} to={`?sectionId=${id}`} buttonHollow>
           <div>
             <h3 className="section-header">
               {name}

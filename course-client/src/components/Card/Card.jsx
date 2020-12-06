@@ -6,8 +6,13 @@ import Arrow from '../../icons/Arrow/Arrow';
 import './Card.css';
 import MarginBetween from '../MarginBetween/MarginBetween';
 
-const Card = ({ to, invertButton, children }) => (
-  <div className="Card">
+const Card = ({
+  to,
+  buttonHollow,
+  disabled,
+  children,
+}) => (
+  <div className={`Card ${disabled ? 'card-disabled' : ''}`}>
     {
       !to
         ? children
@@ -20,7 +25,7 @@ const Card = ({ to, invertButton, children }) => (
             <Link to={to}>
               <Button
                 variant="icon"
-                inverted={invertButton}
+                hollow={buttonHollow}
               >
                 <Arrow />
               </Button>
@@ -33,13 +38,15 @@ const Card = ({ to, invertButton, children }) => (
 
 Card.propTypes = {
   to: PropTypes.string,
-  invertButton: PropTypes.bool,
+  buttonHollow: PropTypes.bool,
+  disabled: PropTypes.bool,
   children: PropTypes.node,
 };
 
 Card.defaultProps = {
   to: '',
-  invertButton: false,
+  buttonHollow: false,
+  disabled: false,
   children: null,
 };
 

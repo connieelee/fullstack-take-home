@@ -8,10 +8,13 @@ const Sessions = ({ sessions }) => (
     <h2>Sessions</h2>
     <MarginBetween>
       {sessions.map(({
-        id, sessionNumber, name, description,
+        id, sessionNumber, name, description, displayReleaseDate, content,
       }) => (
-        <Card key={id}>
+        <Card key={id} disabled={displayReleaseDate && !content}>
           <h3>{`${sessionNumber}. ${name}`}</h3>
+          {displayReleaseDate && !content && (
+            <b>{`Available on ${displayReleaseDate}`}</b>
+          )}
           <p>{description}</p>
         </Card>
       ))}

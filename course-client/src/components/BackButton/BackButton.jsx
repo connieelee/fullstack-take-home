@@ -5,9 +5,9 @@ import Button from '../Button/Button';
 import Arrow from '../../icons/Arrow/Arrow';
 import './BackButton.css';
 
-const BackButton = ({ to, text, inverted }) => (
+const BackButton = ({ to, text, hollow }) => (
   <Link to={to} className="BackButton">
-    <Button variant="icon" inverted={inverted}>
+    <Button variant="icon" hollow={hollow}>
       <Arrow direction="left" />
     </Button>
     {text}
@@ -17,12 +17,12 @@ const BackButton = ({ to, text, inverted }) => (
 BackButton.propTypes = {
   to: PropTypes.string.isRequired,
   text: PropTypes.string,
-  inverted: PropTypes.bool,
+  hollow: PropTypes.bool,
 };
 
 BackButton.defaultProps = {
   text: '',
-  inverted: false,
+  hollow: false,
 };
 
 export default BackButton;

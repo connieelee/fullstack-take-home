@@ -34,7 +34,7 @@
   border-radius: 2rem;
 }
 
-.Button.btn-inverted {
+.Button.btn-hollow {
   background: transparent;
   color: #3542ff;
   border: 1px solid #3542ff;
