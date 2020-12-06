@@ -3,7 +3,7 @@
 .Button {
   font-size: inherit;
   border: 0;
-  background: #6800e6;
+  background: #3542ff;
   color: white;
   cursor: pointer;
   transition: all 0.3s;
@@ -11,13 +11,13 @@
 
 .Button:hover, .Button:focus {
   outline: none;
-  box-shadow: 0 0 0 4px #6800e633;
+  box-shadow: 0 0 0 4px #3542ff33;
 }
 
 .Button:active {
   transform: scale(0.9);
-  background: #6300d9;
-  box-shadow: 0 0 0 4px #6300d933;
+  background: #3542ff;
+  box-shadow: 0 0 0 4px #3542ff33;
 }
 
 .Button.btn-normal {
@@ -32,4 +32,10 @@
   align-items: center;
   justify-content: center;
   border-radius: 2rem;
+}
+
+.Button.btn-inverted {
+  background: transparent;
+  color: #3542ff;
+  border: 1px solid #3542ff;
 }

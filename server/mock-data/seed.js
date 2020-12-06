@@ -10,7 +10,7 @@ const data = {
   section: sections,
   session: sessions,
   user: users,
-  section_users: sectionUsers,
+  sectionUser: sectionUsers,
 };
 
 const seed = async () => {

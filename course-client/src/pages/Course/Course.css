@@ -1,0 +1,8 @@
+.Course .section-header {
+  display: flex;
+  align-items: center;
+}
+
+.Course .columns > * {
+  width: 50%;
+}

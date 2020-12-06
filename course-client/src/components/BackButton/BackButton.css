@@ -1,0 +1,14 @@
+.BackButton {
+  text-decoration: none;
+  color: #3542ff;
+  display: flex;
+  align-items: center;
+}
+
+.BackButton:hover {
+  text-decoration: underline;
+}
+
+.BackButton > button {
+  margin-right: 1em;
+}

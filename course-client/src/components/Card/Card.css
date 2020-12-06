@@ -10,3 +10,9 @@
 .Card:hover {
   box-shadow: 5px 5px 10px #e0e0e0;
 }
+
+.Card .flex-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

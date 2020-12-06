@@ -1,27 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
+import useFetch from '../../hooks/use-fetch';
 import CoursesList from './components/CoursesList/CoursesList';
 import './Courses.css';
 
 const Courses = () => {
-  const [loading, setLoading] = useState(true);
-  const [courses, setCourses] = useState([]);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchCourses = async () => {
-      try {
-        const { data } = await axios.get('http://localhost:8080/courses');
-        setCourses(data);
-      } catch (err) {
-        setError(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchCourses();
-  }, []);
+  const [loading, courses, error] = useFetch([], 'http://localhost:8080/courses');
 
   return (
     <div className="Courses">

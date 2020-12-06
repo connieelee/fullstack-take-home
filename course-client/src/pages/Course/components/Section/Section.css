@@ -1,0 +1,21 @@
+.Section .participants {
+  margin: 2rem 0;
+}
+
+.Section .participants > ol {
+  list-style-type: none;
+  counter-reset: li;
+  padding-left: 0;
+}
+
+.Section .participants > ol > li {
+  margin: 0.8rem 0;
+}
+
+.Section .participants > ol > li:before {
+  counter-increment: li;
+  content: counter(li, decimal-leading-zero);
+  color: #3542ff;
+  margin-right: 0.8em;
+  font-weight: bold;
+}

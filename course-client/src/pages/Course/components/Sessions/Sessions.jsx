@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MarginBetween from '../../../../components/MarginBetween/MarginBetween';
 import Card from '../../../../components/Card/Card';
-import './Sessions.css';
 
 const Sessions = ({ sessions }) => (
-  <div className="Sessions">
+  <div>
     <h2>Sessions</h2>
     <MarginBetween>
       {sessions.map(({
@@ -22,7 +21,10 @@ const Sessions = ({ sessions }) => (
 
 Sessions.propTypes = {
   sessions: PropTypes.arrayOf(PropTypes.shape({
-
+    id: PropTypes.number,
+    sessionNumber: PropTypes.number,
+    name: PropTypes.string,
+    description: PropTypes.string,
   })),
 };
 

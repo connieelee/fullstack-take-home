@@ -1,32 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import MarginBetween from '../../../../components/MarginBetween/MarginBetween';
 import Card from '../../../../components/Card/Card';
-import Badge from '../../../../components/Badge/Badge';
-import './Sections.css';
-
-const statusColors = {
-  Open: 'green',
-  'In progress': 'blue',
-  Ended: 'grey',
-};
+import SectionStatus from '../SectionStatus/SectionStatus';
+import getSectionDates from '../../utils/get-section-dates';
+import sectionPropType from '../../utils/section-prop-type';
 
 const Sections = ({ sections }) => (
-  <div className="Sections">
+  <div>
     <h2>Sections</h2>
     <MarginBetween>
       {sections.map(({
         id,
         name,
-        displayDates: { startDate, endDate },
+        displayDates,
         status,
       }) => (
-        <Card key={id}>
-          <MarginBetween direction="horizontal">
-            <h3>{name}</h3>
-            <p>{`${startDate} - ${endDate}`}</p>
-            <Badge color={statusColors[status]}>{status}</Badge>
-          </MarginBetween>
+        <Card key={id} to={`?sectionId=${id}`} invertButton>
+          <div>
+            <h3 className="section-header">
+              {name}
+              <SectionStatus status={status} />
+            </h3>
+            <p>{getSectionDates(displayDates)}</p>
+          </div>
         </Card>
       ))}
     </MarginBetween>
@@ -34,9 +32,7 @@ const Sections = ({ sections }) => (
 );
 
 Sections.propTypes = {
-  sections: PropTypes.arrayOf(PropTypes.shape({
-
-  })),
+  sections: PropTypes.arrayOf(sectionPropType),
 };
 
 Sections.defaultProps = {
