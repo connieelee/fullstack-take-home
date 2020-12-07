@@ -53,3 +53,28 @@ yarn && yarn start
 - A list of users signed up for each course section should be visible.
 
 - A user should be able to register for a course and remove themselves from the course.
+
+---
+
+## Connie's notes
+
+### Getting started
+
+- Start server
+  - `cd server`
+  - Set up database
+    - `docker-compose up`
+    - `npm run seed-db`
+      - **Note**: If you're reviewing this after `2020-12-18`, you won't be able to test sign-up functionality as there won't be any open sections. Similarly, you may not see any sections with "In progress" status if you're far enough in the future. To address this, simply adjust the start dates in `server/mock-data/sections.json` before running the seed script.
+  - `npm start`
+- Start react app
+  - `cd ../course-client`
+  - `npm start`
+- View course app at http://localhost:3000
+
+### Open items
+
+- Tests
+  - Normally I would've written a proper test suite, but I chose to focus on functionality and presentation with the limited time I had available for this project this week. As a baseline for QA in the absence of tests, I've configured both server and client test scripts to check for linting errors. I'm using eslint with the AirBnB style guide.
+- Auth
+  - Currently, all users can access available contents from any section without verifying whether they're on the participants list. Users may also add or remove any user from any section. Realistically, we would authenticate users and limit the content and actions they have access to.

@@ -2,31 +2,31 @@
   {
     "courseId": 1,
     "name": "Section 1",
-    "startDate": "2020-11-13"
+    "startDate": "2020-11-20"
   },
   {
     "courseId": 1,
     "name": "Section 2",
-    "startDate": "2020-11-27"
+    "startDate": "2020-12-04"
   },
   {
     "courseId": 1,
     "name": "Section 3",
-    "startDate": "2020-12-11"
+    "startDate": "2020-12-18"
   },
   {
     "courseId": 2,
     "name": "Section 1",
-    "startDate": "2020-10-29"
+    "startDate": "2020-11-05"
   },
   {
     "courseId": 2,
     "name": "Section 2",
-    "startDate": "2020-11-12"
+    "startDate": "2020-11-19"
   },
   {
     "courseId": 2,
     "name": "Section 3",
-    "startDate": "2020-11-26"
+    "startDate": "2020-12-03"
   }
 ]
