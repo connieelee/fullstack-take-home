@@ -2,15 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 
-import SectionStatus from '../SectionStatus/SectionStatus';
+import MarginBetween from '../../../../components/MarginBetween/MarginBetween';
 import BackButton from '../../../../components/BackButton/BackButton';
+import SectionStatus from '../SectionStatus/SectionStatus';
+import Participant from './components/Participant/Participant';
 import getSectionDates from '../../utils/get-section-dates';
 import propShapes from '../../utils/prop-shapes';
 
 import './Section.css';
-import MarginBetween from '../../../../components/MarginBetween/MarginBetween';
 
-const Section = ({ loading, section, error }) => {
+const Section = ({
+  loading,
+  section,
+  error,
+  removeUser,
+  usersError,
+}) => {
   const { courseId } = useParams();
 
   return (
@@ -39,10 +46,18 @@ const Section = ({ loading, section, error }) => {
             <ol className="users-list">
               {section.users.map((user) => (
                 <li key={user.id}>
-                  {`${user.name}, ${user.email}`}
+                  <Participant
+                    id={user.id}
+                    name={user.name}
+                    email={user.email}
+                    remove={removeUser}
+                  />
                 </li>
               ))}
             </ol>
+            {usersError && (
+              <p className="error-text">{usersError.message}</p>
+            )}
           </div>
         </>
       )}
@@ -62,12 +77,18 @@ Section.propTypes = {
   error: PropTypes.shape({
     message: PropTypes.string,
   }),
+  removeUser: PropTypes.func,
+  usersError: PropTypes.shape({
+    message: PropTypes.string,
+  }),
 };
 
 Section.defaultProps = {
   loading: false,
   section: null,
   error: null,
+  removeUser: () => {},
+  usersError: null,
 };
 
 export default Section;

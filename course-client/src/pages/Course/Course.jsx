@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 import useQueryParams from '../../hooks/use-query-params';
 import useFetch from '../../hooks/use-fetch';
@@ -20,7 +21,13 @@ const Course = () => {
   const sectionUrl = sectionId ? `${courseUrl}/sections/${sectionId}` : '';
 
   const [loadingCourse, course, courseError] = useFetch(null, courseUrl);
-  const [loadingSection, selectedSection, sectionError] = useFetch(null, sectionUrl);
+  const [
+    loadingSection,
+    selectedSection,
+    sectionError,
+    setSelectedSection,
+  ] = useFetch(null, sectionUrl);
+  const [sectionUsersError, setSectionUsersError] = useState(null);
 
   let sessions = [];
   if (selectedSection) {
@@ -31,6 +38,19 @@ const Course = () => {
   const selectedSession = sessionId
     ? sessions.find(({ id }) => id === +sessionId)
     : null;
+
+  const removeSectionUser = async (userId) => {
+    try {
+      setSectionUsersError(null);
+      await axios.delete(`http://localhost:8080/sections/${sectionId}/users`, {
+        data: { userId },
+      });
+      const users = selectedSection.users.filter((user) => user.id !== userId);
+      setSelectedSection({ ...selectedSection, users });
+    } catch (err) {
+      setSectionUsersError(err);
+    }
+  };
 
   return (
     <div className="Course">
@@ -69,6 +89,8 @@ const Course = () => {
                     loading={loadingSection}
                     section={selectedSection}
                     error={sectionError}
+                    removeUser={removeSectionUser}
+                    usersError={sectionUsersError}
                   />
                 )
             }

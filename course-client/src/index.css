@@ -20,3 +20,9 @@ code {
 .italic {
   font-style: italic;
 }
+
+.error-text {
+  color: #f31b1b;
+  font-size: 0.9rem;
+  font-weight: bold;
+}

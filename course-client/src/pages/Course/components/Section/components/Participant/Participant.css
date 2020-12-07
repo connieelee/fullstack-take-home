@@ -1,0 +1,14 @@
+.Participant {
+ display: inline-flex;
+ align-items: center;
+}
+
+.Participant > button {
+  margin-left: 1rem;
+  background: none;
+  border: none;
+  padding: 0;
+  color: #3542ff;
+  text-decoration: underline;
+  cursor: pointer;
+}
