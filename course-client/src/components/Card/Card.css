@@ -1,7 +1,7 @@
 .Card {
   background: #ffffff;
   border: 1px solid #dcdcdc;
-  border-radius: 3px;
+  border-radius: 5px;
   padding: 1em 2em;
   box-shadow: 3px 3px 8px #eaeaea;
   transition: all 0.3s;

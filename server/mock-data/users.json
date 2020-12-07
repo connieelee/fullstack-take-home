@@ -1,126 +1,101 @@
 [
   {
-    "id": 1,
     "name": "Audie",
     "email": "audie@acnh.com"
   },
   {
-    "id": 2,
     "name": "Bam",
     "email": "bam@acnh.com"
   },
   {
-    "id": 3,
     "name": "Coco",
     "email": "coco@acnh.com"
   },
   {
-    "id": 4,
     "name": "Diana",
     "email": "diana@acnh.com"
   },
   {
-    "id": 5,
     "name": "Ellie",
     "email": "ellie@acnh.com"
   },
   {
-    "id": 6,
     "name": "Fang",
     "email": "fang@acnh.com"
   },
   {
-    "id": 7,
     "name": "Gladys",
     "email": "gladys@acnh.com"
   },
   {
-    "id": 8,
     "name": "Henry",
     "email": "henry@acnh.com"
   },
   {
-    "id": 9,
     "name": "Isabelle",
     "email": "isabelle@acnh.com"
   },
   {
-    "id": 10,
     "name": "Judy",
     "email": "judy@acnh.com"
   },
   {
-    "id": 11,
     "name": "Ketchup",
     "email": "ketchup@acnh.com"
   },
   {
-    "id": 12,
     "name": "Lionel",
     "email": "lionel@acnh.com"
   },
   {
-    "id": 13,
     "name": "Marshal",
     "email": "marshal@acnh.com"
   },
   {
-    "id": 14,
     "name": "Norma",
     "email": "norma@acnh.com"
   },
   {
-    "id": 15,
     "name": "Octavian",
     "email": "octavian@acnh.com"
   },
   {
-    "id": 16,
     "name": "Pashmina",
     "email": "pashmina@acnh.com"
   },
   {
-    "id": 17,
     "name": "Queenie",
     "email": "queenie@acnh.com"
   },
   {
-    "id": 18,
     "name": "Raymond",
     "email": "raymond@acnh.com"
   },
   {
-    "id": 19,
     "name": "Snake",
     "email": "snake@acnh.com"
   },
   {
-    "id": 20,
     "name": "Tipper",
     "email": "tipper@acnh.com"
   },
   {
-    "id": 21,
     "name": "Ursula",
     "email": "ursula@acnh.com"
   },
   {
-    "id": 22,
     "name": "Violet",
     "email": "violet@acnh.com"
   },
   {
-    "id": 23,
     "name": "Whitney",
     "email": "whitney@acnh.com"
   },
   {
-    "id": 24,
     "name": "Yuka",
     "email": "yuka@acnh.com"
   },
   {
-    "id": 25,
     "name": "Zucker",
     "email": "zucker@acnh.com"
   }

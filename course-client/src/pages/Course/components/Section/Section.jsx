@@ -6,15 +6,17 @@ import MarginBetween from '../../../../components/MarginBetween/MarginBetween';
 import BackButton from '../../../../components/BackButton/BackButton';
 import SectionStatus from '../SectionStatus/SectionStatus';
 import Participant from './components/Participant/Participant';
+import SignupForm from './components/SignupForm/SignupForm';
+
 import getSectionDates from '../../utils/get-section-dates';
 import propShapes from '../../utils/prop-shapes';
-
 import './Section.css';
 
 const Section = ({
   loading,
   section,
   error,
+  addUser,
   removeUser,
   usersError,
 }) => {
@@ -41,6 +43,10 @@ const Section = ({
             <p className="italic">{getSectionDates(section.displayDates)}</p>
           </div>
 
+          {usersError && (
+            <p className="error-text">{usersError.message}</p>
+          )}
+
           <div>
             <h3>Participants</h3>
             <ol className="users-list">
@@ -55,9 +61,21 @@ const Section = ({
                 </li>
               ))}
             </ol>
-            {usersError && (
-              <p className="error-text">{usersError.message}</p>
-            )}
+          </div>
+
+          <div>
+            <h3>Sign up</h3>
+            {
+              section.status === 'Open' && section.users.length < 10
+                ? <SignupForm onSubmit={addUser} />
+                : (
+                  <p>
+                    This section is
+                    {section.status !== 'Open' ? ' no longer accepting enrollment' : ' full'}
+                    .
+                  </p>
+                )
+            }
           </div>
         </>
       )}
@@ -77,6 +95,7 @@ Section.propTypes = {
   error: PropTypes.shape({
     message: PropTypes.string,
   }),
+  addUser: PropTypes.func,
   removeUser: PropTypes.func,
   usersError: PropTypes.shape({
     message: PropTypes.string,
@@ -87,6 +106,7 @@ Section.defaultProps = {
   loading: false,
   section: null,
   error: null,
+  addUser: () => {},
   removeUser: () => {},
   usersError: null,
 };

@@ -17,8 +17,10 @@ import './Course.css';
 const Course = () => {
   const { courseId } = useParams();
   const { sectionId, sessionId } = useQueryParams();
-  const courseUrl = `http://localhost:8080/courses/${courseId}`;
+  const host = 'http://localhost:8080';
+  const courseUrl = `${host}/courses/${courseId}`;
   const sectionUrl = sectionId ? `${courseUrl}/sections/${sectionId}` : '';
+  const sectionUsersUrl = sectionId ? `${host}/sections/${sectionId}/users` : '';
 
   const [loadingCourse, course, courseError] = useFetch(null, courseUrl);
   const [
@@ -39,10 +41,21 @@ const Course = () => {
     ? sessions.find(({ id }) => id === +sessionId)
     : null;
 
+  const addSectionUser = async (name, email) => {
+    try {
+      setSectionUsersError(null);
+      const response = await axios.post(sectionUsersUrl, { name, email });
+      const users = selectedSection.users.concat(response.data);
+      setSelectedSection({ ...selectedSection, users });
+    } catch (err) {
+      setSectionUsersError(err);
+    }
+  };
+
   const removeSectionUser = async (userId) => {
     try {
       setSectionUsersError(null);
-      await axios.delete(`http://localhost:8080/sections/${sectionId}/users`, {
+      await axios.delete(sectionUsersUrl, {
         data: { userId },
       });
       const users = selectedSection.users.filter((user) => user.id !== userId);
@@ -89,6 +102,7 @@ const Course = () => {
                     loading={loadingSection}
                     section={selectedSection}
                     error={sectionError}
+                    addUser={addSectionUser}
                     removeUser={removeSectionUser}
                     usersError={sectionUsersError}
                   />

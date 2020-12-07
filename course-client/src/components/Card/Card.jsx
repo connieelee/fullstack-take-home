@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
 import Arrow from '../../icons/Arrow/Arrow';
-import './Card.css';
 import MarginBetween from '../MarginBetween/MarginBetween';
+import './Card.css';
 
 const Card = ({
   to,
