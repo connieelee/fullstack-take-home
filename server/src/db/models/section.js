@@ -17,16 +17,6 @@ const Section = db.define('section', {
       return startDate.add(4, 'w').format('YYYY-MM-DD');
     },
   },
-  displayDates: {
-    type: DataTypes.VIRTUAL,
-    get() {
-      const FORMAT = 'll';
-      return {
-        startDate: moment(this.startDate).format(FORMAT),
-        endDate: moment(this.endDate).format(FORMAT),
-      };
-    },
-  },
   status: {
     type: DataTypes.VIRTUAL,
     get() {

@@ -13,8 +13,8 @@
     "sequelize": "^6.3.5"
   },
   "scripts": {
-    "lint": "eslint .",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src",
+    "test": "npm run lint",
     "start": "nodemon src/server.js",
     "seed-db": "node mock-data/seed.js"
   },

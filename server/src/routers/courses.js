@@ -70,7 +70,6 @@ router.get('/:courseId/sections/:sectionId', async (req, res, next) => {
       return {
         ...session.dataValues,
         releaseDate: releaseMoment.format('YYYY-MM-DD'),
-        displayReleaseDate: releaseMoment.format('ll'),
         content,
       };
     });

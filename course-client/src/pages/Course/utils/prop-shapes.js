@@ -4,10 +4,8 @@ export default {
   section: {
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
-    displayDates: PropTypes.shape({
-      startDate: PropTypes.string,
-      endDate: PropTypes.string,
-    }).isRequired,
+    startDate: PropTypes.string,
+    endDate: PropTypes.string,
     status: PropTypes.oneOf(['Open', 'In progress', 'Ended']).isRequired,
   },
   session: {
@@ -15,7 +13,7 @@ export default {
     sessionNumber: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     description: PropTypes.string,
-    displayReleaseDate: PropTypes.string,
+    releaseDate: PropTypes.string,
     content: PropTypes.string,
   },
 };

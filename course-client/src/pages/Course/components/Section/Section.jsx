@@ -8,8 +8,8 @@ import SectionStatus from '../SectionStatus/SectionStatus';
 import Participant from './components/Participant/Participant';
 import SignupForm from './components/SignupForm/SignupForm';
 
-import getSectionDates from '../../utils/get-section-dates';
 import propShapes from '../../utils/prop-shapes';
+import { getDateRangeString } from '../../utils/date-utils';
 import './Section.css';
 
 const Section = ({
@@ -40,7 +40,7 @@ const Section = ({
               {section.name}
               <SectionStatus status={section.status} />
             </h2>
-            <p className="italic">{getSectionDates(section.displayDates)}</p>
+            <p className="italic">{getDateRangeString(section.startDate, section.endDate)}</p>
           </div>
 
           {usersError && (

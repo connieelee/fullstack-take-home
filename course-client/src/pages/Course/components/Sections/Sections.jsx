@@ -4,8 +4,9 @@ import PropTypes from 'prop-types';
 import MarginBetween from '../../../../components/MarginBetween/MarginBetween';
 import Card from '../../../../components/Card/Card';
 import SectionStatus from '../SectionStatus/SectionStatus';
-import getSectionDates from '../../utils/get-section-dates';
+
 import propShapes from '../../utils/prop-shapes';
+import { getDateRangeString } from '../../utils/date-utils';
 
 const Sections = ({ sections }) => (
   <div>
@@ -14,7 +15,8 @@ const Sections = ({ sections }) => (
       {sections.map(({
         id,
         name,
-        displayDates,
+        startDate,
+        endDate,
         status,
       }) => (
         <Card key={id} to={`?sectionId=${id}`} buttonHollow>
@@ -23,7 +25,7 @@ const Sections = ({ sections }) => (
               {name}
               <SectionStatus status={status} />
             </h3>
-            <p className="italic">{getSectionDates(displayDates)}</p>
+            <p className="italic">{getDateRangeString(startDate, endDate)}</p>
           </div>
         </Card>
       ))}

@@ -2,13 +2,14 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import useQueryParams from '../../../../hooks/use-query-params';
 import BackButton from '../../../../components/BackButton/BackButton';
-import propShapes from '../../utils/prop-shapes';
 import MarginBetween from '../../../../components/MarginBetween/MarginBetween';
+import propShapes from '../../utils/prop-shapes';
+import { formatDate } from '../../utils/date-utils';
 
 const Session = ({
   sessionNumber,
   name,
-  displayReleaseDate,
+  releaseDate,
   description,
   content,
 }) => {
@@ -23,7 +24,7 @@ const Session = ({
       </div>
       <div>
         <h3>Content</h3>
-        <p className="italic">{`Released on ${displayReleaseDate}`}</p>
+        <p className="italic">{`Released on ${formatDate(releaseDate)}`}</p>
         <p>{content}</p>
       </div>
       <BackButton
