@@ -55,9 +55,7 @@ const Course = () => {
   const removeSectionUser = async (userId) => {
     try {
       setSectionUsersError(null);
-      await axios.delete(sectionUsersUrl, {
-        data: { userId },
-      });
+      await axios.delete(`${sectionUsersUrl}/${userId}`);
       const users = selectedSection.users.filter((user) => user.id !== userId);
       setSelectedSection({ ...selectedSection, users });
     } catch (err) {

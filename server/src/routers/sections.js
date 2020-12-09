@@ -29,9 +29,8 @@ router.post('/:sectionId/users', async (req, res, next) => {
   }
 });
 
-router.delete('/:sectionId/users', async (req, res, next) => {
-  const { sectionId } = req.params;
-  const { userId } = req.body;
+router.delete('/:sectionId/users/:userId', async (req, res, next) => {
+  const { sectionId, userId } = req.params;
   try {
     const section = await Section.findByPk(sectionId);
     if (!section) throw new NotFoundError();
